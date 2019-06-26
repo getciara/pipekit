@@ -2,6 +2,7 @@ require "pipekit/client/connection"
 
 require "pipekit/client/people"
 require "pipekit/client/activities"
+require "pipekit/client/deals"
 
 module Pipekit
   class Client
@@ -9,6 +10,7 @@ module Pipekit
     include Pipekit::Client::Connection
     include Pipekit::Client::People
     include Pipekit::Client::Activities
+    include Pipekit::Client::Deals
 
     base_uri "https://api-proxy.pipedrive.com"
     format :json
