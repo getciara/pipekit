@@ -9,9 +9,13 @@ module Pipekit
         get('/activities', { query: options })
       end
 
+      def activity(activity_id)
+        get("/activities/#{activity_id}")
+      end
+
       def update_activity(activity_id, activity)
         activity[:id] = activity_id
-        put("/engagements/v1/engagements/#{activity_id}", { body: activity.to_json })
+        put("/activities/#{activity_id}", { body: activity.to_json })
       end
     end
   end
