@@ -65,6 +65,8 @@ module Pipekit
       end
 
       def authenticate!
+        self.oauth_token = nil
+
         response = self.class.post('https://oatuh.pipedrive.com/oauth/token', body: {
           grant_type: 'refresh_token',
           client_id: @client_id,
